@@ -46,8 +46,12 @@ nav {
 			border-bottom: 1px solid rgba(255,255,255,0);
 			color: rgba(255,255,255,1);
 			margin: 0 3px 10px;
+			padding: 24px 5px;
 		}
 
+		@media #{$desktop} {
+		    padding: 24px 10px;
+		}
 
 		&.nav-toggle {
 			display: inline;
@@ -79,7 +83,11 @@ nav {
 			display: inline-block;
 			float: right;
             position: relative;
-            top: -11px;
+            top: -6px;
+		}
+
+		@media #{$desktop} {
+            top: -4px;
 		}
 
 	    a {
