@@ -1,0 +1,25 @@
+<nav>
+	<a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
+	{% for link in site.data.navigation %}
+		{% assign class = "" %}
+		{% if link.highlight %}
+			{% assign class = class | append: " highlight" %}
+		{% endif %}
+
+		{% if link.link == page.url %}
+			{% assign class = class | append: " active" %}
+		{% endif %}
+		<a href="{% include relative-src.html src=link.link %}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a>
+	{% endfor %}
+
+	<div class="right-navigation">
+		<a href="https://join.slack.com/t/stridecodes/shared_invite/zt-xr1dlqv7-Lesu9nFYOqF~AjA6VPUdhw" target="_blank">
+			<img src="/images/slack.png" alt="Slack"> Slack
+		</a>
+
+		<a href="https://github.com/trustimaging/stride" target="_blank">
+			<img src="/images/github.png" alt="GitHub" class="light-logo">
+			<img src="/images/github_negative.png" alt="GitHub" class="dark-logo"> GitHub
+		</a>
+	</div>
+</nav>

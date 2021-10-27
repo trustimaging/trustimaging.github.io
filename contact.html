@@ -1,0 +1,109 @@
+---
+title: Contact us
+description: Join the Stride community to share your projects, contribute, and get your questions answered.
+map:
+  latitude: 51.50006472109017
+  longitude: -0.17580351945360972
+  address: Imperial College London, SW7 2AZ, London, United Kingdom
+  zoom: 13
+image: /images/background_01.jpg
+---
+
+<section class="hero secondary" style="background-image: url({% include relative-src.html src=page.image %})">
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<h1 class="editable">Contact us</h1>
+			<p class="subtext editable">
+				Join the Stride community to share your projects, contribute, and get your questions answered, or contact us directly.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="info">
+	<div class="container">
+		<div class="flex box-container">
+
+			<div class="box first-box">
+			<a href="https://join.slack.com/t/stridecodes/shared_invite/zt-xr1dlqv7-Lesu9nFYOqF~AjA6VPUdhw" target="_blank">
+				<img src="/images/slack.png" alt="Slack">
+
+				<h3 class="editable">Slack</h3>
+				<p class="editable">
+					Join the conversation and share your questions and comments.
+				</p>
+			</a>
+			</div>
+
+			<div class="box">
+			<a href="https://github.com/trustimaging/stride" target="_blank">
+				<img src="/images/github_negative.png" alt="GitHub">
+
+				<h3 class="editable">GitHub</h3>
+				<p class="editable">
+					Stay up to date with the latest Stride features.
+				</p>
+			</a>
+			</div>
+
+			<div class="box last-box">
+			<a href="" target="_blank">
+				<img src="/images/favicon.png" alt="Stride">
+
+				<h3 class="editable">Documentation</h3>
+				<p class="editable">
+					Check our Stride documentation and examples.
+				</p>
+			</a>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section class="info negative">
+	<div class="text-container contact-box">
+		<div class="contact-details">
+			<h3>Address</h3>
+			<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
+
+			<h3>Email</h3>
+			<p class="editable">
+				<span class="name">Carlos Cueto</span> — <a href="mailto:c.cueto@imperial.ac.uk">c.cueto@imperial.ac.uk</a>
+			</p>
+		</div>
+	</div>
+</section>
+
+<div class="map" id="map"></div>
+
+<script>
+	window.mapData = {{ page.map | jsonify }};
+
+	function initMap() {
+		var myOptions = {
+			scrollwheel: false,
+			draggable: false,
+			panControl: false,
+			disableDefaultUI: true,
+			styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]}],
+			zoom: window.mapData.zoom,
+			maxZoom: window.mapData.zoom,
+			minZoom: window.mapData.zoom,
+			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+
+		var map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+		var marker = new google.maps.Marker({
+			map: map,
+			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
+		});
+
+		google.maps.event.addDomListener(window, 'resize', function() {
+			map.setCenter(myOptions.center);
+		});
+	}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>

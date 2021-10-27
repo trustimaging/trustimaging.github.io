@@ -1,0 +1,145 @@
+.hero {
+	color: #ffffff;
+	text-align: center;
+	height: 600px;
+	min-height: 550px;
+	background-color: #333;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	&.secondary {
+	    height: 400px;
+	    min-height: 300px;
+
+	    .hero-text-container {
+	        margin-top: 45px;
+	    }
+	}
+
+	&:before {
+		content: "";
+		background: linear-gradient(to bottom,rgba(0,0,0,.65) 0,rgba(0, 0, 0, 0) 100%);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 300px;
+}
+
+	p {
+		color: #fff;
+	}
+
+	.inner-hero {
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+
+	.hero-text-container {
+		width: 600px;
+		text-align: left;
+
+		h1, h2, p, .button {
+			text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+		}
+	}
+
+	.hero-text-right {
+		position: absolute;
+		right: 0;
+	}
+}
+
+.image {
+	text-align: center;
+}
+
+.bottom-cta {
+	text-align: center;
+
+	h2 {
+		margin-bottom: 12px;
+	}
+}
+
+@media #{$desktop} {
+	.flex {
+		@include flexbox;
+		align-items: center;
+		flex-direction: row;
+
+		.text, .image, .box {
+			-webkit-flex: 1;
+			flex: 1;
+			padding: 0 20px;
+		}
+
+		.first-text {
+            padding-left: 0 !important;
+        }
+
+        .last-text {
+            padding-right: 0 !important;
+        }
+	}
+
+	.content section:nth-child(even) .flex {
+		flex-direction: row-reverse;
+	}
+}
+
+.box-container {
+
+}
+
+.box {
+    margin: 20px 15px 0;
+    padding: 0 !important;
+    border: solid 1px #d6d7d8;
+    -webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+
+    &.first-box {
+        margin-left: 0 !important;
+    }
+
+    &.last-box {
+        margin-right: 0 !important;
+    }
+
+    &:hover {
+        border-left: solid 1px $brand-color;
+    }
+
+    a {
+        padding: 0 20px 0 75px;
+        display: block;
+        height: 100%;
+        color: black;
+        text-decoration: none;
+        position: relative;
+    }
+
+    a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+    img {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: -6px;
+        left: 20px;
+
+        &.stride {
+            width: 35px;
+            height: 35px;
+            top: -8px;
+        }
+    }
+}

@@ -1,44 +1,112 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# ----
+# Site
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://stride.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-domain: "stride.github.io"
-twitter_username: jekyllrb
-github_username:  jekyll
+title: Stride
+url: "https://stride.codes"
+baseurl:
+google_analytics_key: "G-7MCHVSWTNM"
+google_maps_javascript_api_key: "AIzaSyB7CexDTgjMFufWCQWM1hBV6hDWqoLhgm0"
+disqus_shortname:
 
-# Build settings
-markdown: kramdown
-theme: minima
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: An open-source library for ultrasound modelling and tomography.
+author:
+  name: Carlos Cueto
+  email: c.cueto@imperial.ac.uk
+  twitter: # twitter username without the @ symbol
+social:
+  name: Stride
+  links:
+    - https://github.com/trustimaging/stride
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+permalink: pretty
+
+highlighter: rouge
+
 plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-archives
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+
+collections:
+  staff_members:
+    _hide_content: true
+    _icon: account_circle
+
+paginate: 10
+paginate_path: "/blog/:num/"
+
+jekyll-archives:
+  enabled: ['categories']
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
+      _options:
+        image:
+          width: 2000
+          height: 1322
+          resize_style: cover
+          uploads_dir: "/images/post_uploads"
+        content:
+          width: 1500
+          height: 2000
+          uploads_dir: "/images/post_uploads"
+  -
+    scope:
+      path: "contact-success.html"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      image:
+        width: 2000
+        height: 1322
+        resize_style: cover
+      bottom_image:
+        width: 2000
+        height: 1322
+        resize_style: cover
+
+# -----------
+
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - Email
+  - RSS
+
+_comments:
+  description: An open-source library for ultrasound modelling and tomography that provides flexibility and scalability together with production-grade performance.
+  blurb: ~

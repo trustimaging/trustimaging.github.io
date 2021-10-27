@@ -1,0 +1,8 @@
+- name: Get started
+  link: /#install
+- name: Documentation
+  link: /#/
+- name: Citing
+  link: /citing/
+- name: Contact us
+  link: /contact/

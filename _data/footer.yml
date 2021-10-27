@@ -1,0 +1,10 @@
+left_links:
+right_links:
+  - name:
+    link: https://twitter.com/intent/tweet?text=+https://stride.codes/
+    social_icon: Twitter
+    new_window: true
+  - name:
+    link: https://www.linkedin.com/shareArticle?mini=true&url=https://stride.codes/
+    social_icon: LinkedIn
+    new_window: true
