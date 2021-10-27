@@ -12,6 +12,11 @@
 .container {
 	max-width: 1240px;
 	position: relative;
+	padding: 0 15px;
+
+	@media #{$desktop} {
+	    padding: 0;
+	}
 }
 
 .dark-logo {
@@ -45,6 +50,7 @@ header {
 		box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 		transition: background-color 0.2s ease;
 		text-shadow: none;
+		min-height: 65px;
 
 		a {
 			color: #333;
@@ -126,17 +132,20 @@ header {
 
 .highlight-container {
     margin: 30px 0;
+    max-width: 100%;
 }
 
 .highlight {
-    display: inline-block;
+    display: block;
     margin-inline-start: 15px;
     margin-inline-end: 15px;
     background-color: #F8F8F8;
+    max-width: 100%;
 
     pre {
         padding: 30px;
         font-size: 1.2em;
+        overflow-x: auto;
     }
 }
 

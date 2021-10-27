@@ -18,10 +18,7 @@ footer {
 		margin: 0;
 
 		&.footer-right-links {
-			float: left;
-			@media #{$tablet} {
-				float: right;
-			}
+			float: right;
 		}
 
 		&.footer-left-links {
