@@ -1,7 +1,7 @@
 - name: Get started
   link: /#install
 - name: Documentation
-  link: /#/
+  link: https://docs.stride.codes
 - name: Citing
   link: /citing/
 - name: Contact us
