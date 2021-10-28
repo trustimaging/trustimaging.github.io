@@ -2,6 +2,7 @@
   link: /#install
 - name: Documentation
   link: https://docs.stride.codes
+  new_window: true
 - name: Citing
   link: /citing/
 - name: Contact us
