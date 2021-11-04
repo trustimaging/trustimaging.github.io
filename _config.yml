@@ -10,6 +10,7 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
+image: /siteicon.png
 description: An open-source library for ultrasound modelling and tomography.
 author:
   name: Carlos Cueto
@@ -18,7 +19,7 @@ author:
 social:
   name: Stride
   links:
-    - https://github.com/trustimaging/stride
+    - https://www.stride.codes
 
 # -----
 # Build
